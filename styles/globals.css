@@ -5,5 +5,8 @@
 
 @font-face {
   font-family: 'kremlin';
-  src: url('../public/fonts/kremlin.ttf');
+  src: url('../public/fonts/kremlin.ttf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
