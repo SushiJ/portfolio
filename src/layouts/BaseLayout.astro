@@ -1,0 +1,24 @@
+---
+import Navbar from "../components/Navbar.astro";
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body class="bg-[#0a0a0a] max-h-screen overflow-y-auto max-w-5xl mx-auto">
+    <Navbar />
+    <div>
+      <slot />
+    </div>
+    <footer class="fixed bottom-0 text-gray-50 py-4 max-w-5xl w-full text-center">
+      <hr class="pb-4 border-nightOwl-border"/>
+      <p class="font-semibold">
+        Made with <a class="text-nightOwl-pink hover:underline" href="https://astro.build/" target="_blank">Astro</a> 
+      </p>
+    </footer>
+  </body>
+</html>
