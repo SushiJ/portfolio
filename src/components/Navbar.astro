@@ -8,14 +8,19 @@ const Links = [
 ---
 
 <nav
-  class="py-4 bg-nightOwl-transparent text-nightOwl-property flex items-center justify-between"
+  class="flex justify-between items-center py-4 bg-nightOwl-transparent text-nightOwl-property"
 >
   <a href="/" class="text-nightOwl-pink"><Logo height={50} width={50} /></a>
-  <ul class="flex space-x-4 py-4">
+  <ul class="flex py-4 space-x-4">
     {
       Links.map((link) => (
         <li class="">
-          <a class="border-[.5px] border-[#0a0a0a] hover:text-nightOwl-pink hover:border-[.5px] hover:border-nightOwl-pink rounded-sm p-2 tex-sm" href={link.href}>{link.name}</a>
+          <a
+            class="border-[.5px] border-nightOwl-text hover:text-nightOwl-pink hover:border-[.5px] hover:border-nightOwl-pink rounded-sm p-2 tex-sm"
+            href={link.href}
+          >
+            {link.name}
+          </a>
         </li>
       ))
     }

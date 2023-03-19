@@ -1,7 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FromReact from "../components/Threejs";
 ---
 
 <BaseLayout title="Home">
-  <h1 class="text-nightOwl-primary text-4xl py-2">Astro</h1>
+  <div class="flex items-center lg:justify-between mt-10 flex-col lg:flex-row">
+    <h1 class="py-2 text-4xl text-nightOwl-primary">Astro</h1>
+    <div class="lg:w-1/2 lg:h-1/2 mx-6 xl:mx-0">
+      <FromReact client:load />
+    </div>
+  </div>
 </BaseLayout>
