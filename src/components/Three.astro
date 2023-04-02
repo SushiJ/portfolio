@@ -1,0 +1,38 @@
+<canvas id="canvas" class=""></canvas>
+<script>
+    import * as THREE from "three";
+    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+    const scene = new THREE.Scene();
+    const geometery = new THREE.SphereGeometry(3, 64, 64);
+    const material = new THREE.MeshStandardMaterial({ color: "#FF9CBE" });
+    const mesh = new THREE.Mesh(geometery, material);
+    scene.add(mesh);
+
+    // Light
+    const light = new THREE.PointLight(0xffffff, 1, 100);
+    light.position.set(0, 10, 10);
+    scene.add(light);
+
+    // camera
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.z = 20;
+    scene.add(camera);
+
+    // Renderer
+    const canvas = document.getElementById("canvas");
+    const renderer = new THREE.WebGLRenderer({ canvas });
+    renderer.setSize(500, 500);
+    renderer.render(scene, camera);
+
+    // Controller
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+    controls.autoRotateSpeed = 5;
+
+    const loop = () => {
+        renderer.render(scene, camera);
+        controls.update();
+        requestAnimationFrame(loop);
+    };
+</script>

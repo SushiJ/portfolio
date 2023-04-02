@@ -1,0 +1,65 @@
+---
+import Logo from "./Logo.astro";
+import MenuIcon from "./MenuIcon.astro";
+const Links = [
+    { href: "/", name: "Home" },
+    { href: "/about", name: "About" },
+    { href: "/resume", name: "Resume" },
+];
+---
+
+<nav
+    class="flex justify-between items-center py-4 bg-nightOwl-transparent text-nightOwl-property mt-8"
+>
+    <a href="/" class="text-nightOwl-pink">
+        <Logo className="w-32 h-32" />
+    </a>
+    <ul class="hidden lg:flex py-4 space-x-4">
+        {
+            Links.map((link) => (
+                <li>
+                    <a
+                        class="border-[.5px] border-nightOwl-text hover:text-nightOwl-pink hover:border-[.5px] hover:border-nightOwl-pink rounded-sm p-2 tex-sm"
+                        href={link.href}
+                    >
+                        {link.name}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+    <button class="lg:hidden" id="menubtn">
+        <span class="hover:text-nightOwl-pink">
+            <MenuIcon />
+        </span>
+    </button>
+    <div
+        id="list"
+        class="hidden antialiased border-nightOwl-pink border-[1px] text-4xl space-y-4 p-4 fixed right-0 top-0 bottom-0 z-10 w-64 h-64 rounded-sm transform mt-44 mr-4 text-left bg-nightOwl-backdrop"
+    >
+        {
+            Links.map((link) => (
+                <p>
+                    <a href={link.href} class="hover:text-nightOwl-pink">
+                        {link.name}
+                    </a>
+                </p>
+            ))
+        }
+    </div>
+</nav>
+<script lang="ts">
+    let isMenuOpen = false;
+    const menuButton = document.getElementById("menubtn");
+    const menuList = document.getElementById("list");
+    menuButton.addEventListener("click", setIsOpen);
+    function setIsOpen() {
+        if (isMenuOpen) {
+            menuList.style.display = "none";
+            isMenuOpen = false;
+        } else {
+            menuList.style.display = "inline";
+            isMenuOpen = true;
+        }
+    }
+</script>
