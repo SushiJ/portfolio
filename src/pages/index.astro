@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FromReact from "../components/Threejs";
+import Sphere from "../components/Threejs";
 ---
 
 <BaseLayout title="Home">
-  <div class="flex items-center lg:justify-between mt-10 flex-col lg:flex-row">
-    <h1 class="py-2 text-4xl text-nightOwl-primary">Astro</h1>
-    <div class="lg:w-1/2 lg:h-1/2 mx-6 xl:mx-0">
-      <FromReact client:load />
+    <div
+        class="flex items-center lg:justify-between mt-10 flex-col lg:flex-row"
+    >
+        <h1 class="py-2 text-4xl text-nightOwl-primary">Astro</h1>
+        <div class="lg:w-1/2 lg:h-1/2 mx-6 xl:mx-0">
+            <Sphere client:load />
+        </div>
     </div>
-  </div>
 </BaseLayout>
