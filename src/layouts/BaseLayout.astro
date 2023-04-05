@@ -10,13 +10,11 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
   </head>
   <body
-    class="flex flex-col px-6 xl:px-0 bg-[#0a0a0a] max-h-screen overflow-y-auto max-w-5xl mx-auto"
+    class="flex flex-col px-12 xl:px-0 bg-[#0a0a0a] max-h-screen overflow-y-auto max-w-5xl mx-auto"
   >
-    <div class="h-screen">
-      <Navbar client:load />
-      <div class="">
-        <slot />
-      </div>
+    <Navbar client:load />
+    <div class="h-screen grid place-items-center">
+      <slot />
     </div>
     <footer class="w-full max-w-5xl py-4 text-center text-gray-50">
       <hr class="pb-4 border-nightOwl-border border-t-[1px]" />
