@@ -1,4 +1,7 @@
 ---
+import Github from "../components/icons/github.astro";
+import Linkedin from "../components/icons/linkedin.astro";
+import Twitter from "../components/icons/twitter.astro";
 import Navbar from "../components/Navbar";
 const { title } = Astro.props;
 ---
@@ -8,16 +11,45 @@ const { title } = Astro.props;
   <head>
     <title>{title}</title>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
   </head>
   <body
-    class="flex flex-col px-12 xl:px-0 bg-[#0a0a0a] max-h-screen overflow-y-auto max-w-5xl mx-auto"
+    class="flex flex-col px-12 xl:px-0 bg-[#0a0a0a] max-h-screen overflow-y-auto max-w-5xl mx-auto relative"
   >
     <Navbar client:load />
-    <div class="h-screen grid place-items-center">
+    <div class="h-screen">
       <slot />
     </div>
     <footer class="w-full max-w-5xl py-4 text-center text-nightOwl-text">
       <hr class="pb-4 border-nightOwl-border border-t-[1px]" />
+      <div
+        class="text-nightOwl-text bottom-20 flex justify-center space-x-6 pb-6 items-center"
+      >
+        <a class="hover:text-nightOwl-pink" href="mailto:sushant.wurk@gmail.com"
+          >sushant.wurk@gmail.com</a
+        >
+        <a
+          class="hover:text-nightOwl-pink"
+          href="https://www.github.com/sushij"
+          target="_blank"
+        >
+          <Github />
+        </a>
+        <a
+          class="hover:text-nightOwl-pink"
+          href="https://www.linkedin.com/in/sushantsharma23"
+          target="_blank"
+        >
+          <Linkedin />
+        </a>
+        <a
+          class="hover:text-nightOwl-pink"
+          href="https://www.twitter.com/sushidotgg"
+          target="_blank"
+        >
+          <Twitter />
+        </a>
+      </div>
       <p class="font-semibold">
         Made with <a
           class="hover:underline text-nightOwl-pink"
