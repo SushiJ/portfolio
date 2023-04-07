@@ -1,21 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const identity = {
-  firstName: "Sushant",
-};
-const skills = ["Typescript", "Vue", "React", "Astro"];
+import CardList from "../components/CardList.astro";
 ---
 
-<BaseLayout>
-  <div class="text-xl text-nightOwl-primary">
-    About
-    <!-- <p>Here are a few facts about me:</p> -->
-    <!-- <ul> -->
-    <!--   <li>My name is {identity.firstName}.</li> -->
-    <!-- </ul> -->
-    <!-- <p>My skills are:</p> -->
-    <!-- <ul> -->
-    <!--   {skills.map((skill) => <li>{skill}</li>)} -->
-    <!-- </ul> -->
+<BaseLayout title="Sushant Sharma | About">
+  <div class="text-xl text-nightOwl-text py-8">
+    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4">About</h1>
+    <p class="text-nightOwl-text">
+      I'm a software Engineer based in Bengaluru, IN. I'm a software engineer
+      who specializes in crafting innovative web solutions. With a focus on user
+      experience and expertise in various programming languages, I aim to create
+      high-quality websites and web applications that help businesses and
+      individuals achieve their goals. Let's collaborate to bring your vision to
+      life.
+    </p>
+    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mt-8">Projects</h1>
+    <div>
+      <CardList />
+    </div>
   </div>
 </BaseLayout>

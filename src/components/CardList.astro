@@ -1,0 +1,24 @@
+---
+import Card from "./Card.astro";
+const projects = [
+  {
+    titie: "Windows Paint",
+    tech: ["React", "Redux", "RTK"],
+    desc: "Description",
+    links: { github: "github", live: "live" },
+  },
+];
+---
+
+<div>
+  {
+    projects.map((link) => (
+      <Card
+        title={link.titie}
+        tech={link.tech}
+        desc={link.desc}
+        links={link.links}
+      />
+    ))
+  }
+</div>

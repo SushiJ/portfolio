@@ -1,0 +1,10 @@
+---
+const { title, tech, desc, links } = Astro.props;
+---
+
+<div class="border-2 border-nightOwl-pink h-96 w-96 bg-gray-700">
+  <h1>{title}</h1>
+  <h1>{tech}</h1>
+  <p>{desc}</p>
+  <p>{(links.github, links.live)}</p>
+</div>
