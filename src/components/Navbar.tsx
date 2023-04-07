@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Logo, MenuIcon } from "./Icons";
+import { CloseMenuIcon, Logo, MenuIcon } from "./Icons";
 const Links = [
   { href: "/", name: "Home" },
   { href: "/about", name: "About" },
-  { href: "/Resume.pdf", name: "Resume", target: "_blank" },
+  { href: "/resume.pdf", name: "Resume", target: "_blank" },
 ];
 function Navbar() {
   const [isSideBarOpen, setisSideBarOpen] = useState(false);
   return (
-    <nav className="flex justify-between items-center py-4 bg-nightOwl-transparent text-nightOwl-property mt-8">
+    <nav className="flex justify-between items-center py-4 bg-nightOwl-transparent mt-8 text-nightOwl-text">
       <a href="/" className="text-nightOwl-pink">
         <Logo className="w-20 h-20 lg:w-16 lg:h-16" />
       </a>
@@ -30,13 +30,14 @@ function Navbar() {
         onClick={() => setisSideBarOpen(!isSideBarOpen)}
       >
         <span className="hover:text-nightOwl-pink">
-          <MenuIcon />
+          {isSideBarOpen ? <CloseMenuIcon /> : <MenuIcon />}
         </span>
       </button>
       {isSideBarOpen && (
         <div
-          className="border-nightOwl-pink border-2 text-4xl space-y-4 p-4 fixed right-0 top-0 bottom-0 z-10 w-64 h-64 rounded-sm transform
-            mt-44 mr-4 text-left bg-nightOwl-backdrop"
+          tabIndex={isSideBarOpen ? 1 : -1}
+          className="text-4xl space-y-4 p-4 fixed right-0 top-0 bottom-0 z-10 w-72 h-72 rounded-sm 
+            mt-44 mr-4 text-left transition ease-in-out delay-100 text-nightOwl-text"
         >
           {Links.map((link) => (
             <p key={link.name}>
