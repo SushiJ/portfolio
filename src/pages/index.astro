@@ -4,19 +4,23 @@ import Sphere from "../components/Threejs";
 ---
 
 <BaseLayout title="Sushant Sharma | Home">
-  <div class="flex flex-col items-center justify-center font-mono">
+  <div class="flex items-center justify-center font-mono h-full">
     <div>
-      <p class="text-nightOwl-pink py-10 text-2xl">Hi, my name is</p>
-      <p class="text-7xl text-nightOwl-text font-bold py-2">Sushant Sharma</p>
-      <p class="text-nightOwl-border text-5xl font-semibold">
+      <p class="text-nightOwl-pink py-10 text-2xl lg:text-xl">Hi, my name is</p>
+      <p class="text-7xl lg:text-5xl text-nightOwl-text font-bold py-2">
+        Sushant Sharma
+      </p>
+      <p class="text-nightOwl-border text-5xl lg:text-4xl font-semibold">
         I build things for the web.
       </p>
-      <p class="text-nightOwl-text text-3xl py-8 leading-none max-w-lg">
-        I’m a software engineer Based in Bengaluru, IN specializing in building
+      <p
+        class="text-nightOwl-text text-3xl lg:text-2xl py-8 leading-none max-w-lg lg:max-w-fit"
+      >
+        I’m a software engineer based in Bengaluru, IN specializing in building
         exceptional digital experiences.
       </p>
     </div>
-    <div class="hidden lg:inline">
+    <div class="hidden lg:block">
       <Sphere client:load />
     </div>
   </div>
