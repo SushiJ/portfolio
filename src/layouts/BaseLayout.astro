@@ -11,11 +11,11 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg" href="favicon.svg" />
   </head>
-  <body class="flex flex-col px-12 bg-[#0a0a0a] max-h-screen max-w-5xl mx-auto">
-    <Navbar client:load />
-    <main class="h-screen">
-      <slot />
-    </main>
+  <body class="flex flex-col px-12 bg-[#0a0a0a] max-w-5xl mx-auto h-screen">
+    <header>
+      <Navbar client:load />
+    </header>
+    <slot />
     <Footer />
   </body>
 </html>

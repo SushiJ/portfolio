@@ -23,7 +23,7 @@ const learn = ["Go", "Nextjs", "Vue"];
 ---
 
 <BaseLayout title="Sushant Sharma | About">
-  <div class="text-nightOwl-text py-8 text-4xl lg:text-xl">
+  <main class="text-nightOwl-text py-8 text-4xl lg:text-xl h-full">
     <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4 pt-8 lg:pt-0">
       About Me
     </h1>
@@ -67,7 +67,7 @@ const learn = ["Go", "Nextjs", "Vue"];
         for more</span
       >
     </h1>
-    <section class="flex flex-wrap gap-3 py-6 justify-center lg:justify-start">
+    <section class="flex flex-wrap gap-3 py-6 justify-center">
       {
         projects.map((project) => (
           <Card
@@ -79,5 +79,5 @@ const learn = ["Go", "Nextjs", "Vue"];
         ))
       }
     </section>
-  </div>
+  </main>
 </BaseLayout>
