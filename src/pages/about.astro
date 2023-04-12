@@ -1,22 +1,83 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CardList from "../components/CardList.astro";
+import Card from "../components/Card.astro";
+const projects = [
+  {
+    title: "Windows98 Paint",
+    tech: ["React", "Redux", "RTK"],
+    desc: "UI inspired by windows 98, lets you draw and export drawings to share with others.",
+    links: {
+      github: "https://github.com/sushij",
+      live: "https://paint.itzsushi.xyz",
+    },
+  },
+  {
+    title: "Snippets (WIP)",
+    tech: ["Go"],
+    desc: "Sign up and start saving snippets quickly and reliably to comeback to later.",
+    links: { github: "https://github.com/sushij" },
+  },
+];
+const comfortable = ["Javascript", "Typescript", "React", "Node"];
+const learn = ["Go", "Nextjs", "Vue"];
 ---
 
 <BaseLayout title="Sushant Sharma | About">
-  <div class="text-xl text-nightOwl-text py-8">
-    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4">About</h1>
-    <p class="text-nightOwl-text">
-      I'm a software Engineer based in Bengaluru, IN. I'm a software engineer
-      who specializes in crafting innovative web solutions. With a focus on user
-      experience and expertise in various programming languages, I aim to create
-      high-quality websites and web applications that help businesses and
-      individuals achieve their goals. Let's collaborate to bring your vision to
-      life.
+  <div class="text-nightOwl-text py-8 text-4xl lg:text-xl">
+    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4 pt-8 lg:pt-0">
+      About Me
+    </h1>
+    <p class="text-nightOwl-text py-4">
+      Hello! I'm Sushant, a software Engineer based in Bengaluru, IN. I enjoy
+      creating beautiful and reliable things that live on the internet.
     </p>
-    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mt-8">Projects</h1>
-    <div>
-      <CardList />
-    </div>
+    <p class="py-2 text-3xl lg:text-xl">
+      Here are some technologies I'm fairly comfortable with:
+    </p>
+    <ul class="p-2 text-3xl lg:text-lg">
+      {
+        comfortable.map((c) => (
+          <li class="list-inside">
+            <span>&gt;</span>
+            {c}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="pt-2 text-3xl lg:text-xl">
+      Here are some things I'm trying to get comfortable with:
+    </p>
+    <ul class="p-2 text-3xl lg:text-lg">
+      {
+        learn.map((c) => (
+          <li class="list-inside">
+            <span>&gt;</span>
+            {c}
+          </li>
+        ))
+      }
+    </ul>
+    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mt-12">
+      Projects <span class="text-2xl lg:text-sm text-nightOwl-text"
+        >Check out my <a
+          href="https://github.com/sushij"
+          target="_blank"
+          class="text-nightOwl-pink underline">github</a
+        >
+        for more</span
+      >
+    </h1>
+    <section class="flex flex-wrap gap-3 py-6 justify-center lg:justify-start">
+      {
+        projects.map((project) => (
+          <Card
+            title={project.title}
+            tech={project.tech}
+            desc={project.desc}
+            links={project.links}
+          />
+        ))
+      }
+    </section>
   </div>
 </BaseLayout>
