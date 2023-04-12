@@ -7,35 +7,38 @@ import Twitter from "../components/icons/twitter.astro";
 <footer class="w-full max-w-5xl py-8 text-center text-nightOwl-text">
   <hr class="pb-6 border-nightOwl-border border-t-[1px]" />
   <div
-    class="text-nightOwl-text bottom-20 flex justify-center space-x-6 pb-6 items-center"
+    class="text-nightOwl-text bottom-20 flex flex-col-reverse lg:flex-row lg:justify-center space-x-6 pb-6 lg:items-center"
   >
     <a
       class="hover:text-nightOwl-pink text-4xl lg:text-2xl"
       href="mailto:sushant.wurk@gmail.com">sushant.wurk@gmail.com</a
     >
-    <span class="border-r-2 border-nightOwl-pink border-solid h-10 lg:h-8"
+    <span
+      class="hidden lg:inline border-r-2 border-nightOwl-pink border-solid h-10 lg:h-8"
     ></span>
-    <a
-      class="hover:text-nightOwl-pink"
-      href="https://www.github.com/sushij"
-      target="_blank"
-    >
-      <Github />
-    </a>
-    <a
-      class="hover:text-nightOwl-pink"
-      href="https://www.linkedin.com/in/sushantsharma23"
-      target="_blank"
-    >
-      <Linkedin />
-    </a>
-    <a
-      class="hover:text-nightOwl-pink"
-      href="https://www.twitter.com/sushidotgg"
-      target="_blank"
-    >
-      <Twitter />
-    </a>
+    <div class="flex items-center justify-center pb-6 lg:pb-0 gap-4">
+      <a
+        class="hover:text-nightOwl-pink"
+        href="https://www.github.com/sushij"
+        target="_blank"
+      >
+        <Github />
+      </a>
+      <a
+        class="hover:text-nightOwl-pink"
+        href="https://www.linkedin.com/in/sushantsharma23"
+        target="_blank"
+      >
+        <Linkedin />
+      </a>
+      <a
+        class="hover:text-nightOwl-pink"
+        href="https://www.twitter.com/sushidotgg"
+        target="_blank"
+      >
+        <Twitter />
+      </a>
+    </div>
   </div>
   <p class="font-semibold text-2xl lg:text-xl">
     Made with <a

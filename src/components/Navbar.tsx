@@ -36,8 +36,8 @@ function Navbar() {
       {isSideBarOpen && (
         <div
           tabIndex={isSideBarOpen ? 1 : -1}
-          className="text-4xl space-y-4 p-4 fixed right-0 top-0 bottom-0 z-10 w-72 h-72 rounded-sm 
-            mt-44 mr-4 text-left transition ease-in-out delay-100 text-nightOwl-text"
+          className="text-4xl space-y-8 p-4 fixed right-0 top-0 bottom-0 z-10 w-72 h-60 rounded-sm 
+            mt-44 mr-4 text-left transition ease-in-out delay-100 text-nightOwl-text backdrop-blur"
         >
           {Links.map((link) => (
             <p key={link.name}>
