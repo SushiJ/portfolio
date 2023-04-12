@@ -1,27 +1,119 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import Sphere from "../components/Threejs";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+const projects = [
+  {
+    title: "Windows98 Paint",
+    tech: ["React", "Redux", "RTK"],
+    desc: "UI inspired by windows 98, lets you draw and export drawings to share with others.",
+    links: {
+      github: "https://github.com/sushij",
+      live: "https://paint.itzsushi.xyz",
+    },
+  },
+  {
+    title: "Snippets (WIP)",
+    tech: ["Go"],
+    desc: "Sign up and start saving snippets quickly and reliably to comeback to later.",
+    links: { github: "https://github.com/sushij" },
+  },
+];
+const comfortable = ["Javascript", "Typescript", "React", "Node"];
+const learn = ["Go", "Nextjs", "Vue"];
 ---
 
-<BaseLayout title="Sushant Sharma | Home">
-  <main class="flex items-center justify-center font-mono h-full">
-    <div>
-      <p class="text-nightOwl-pink py-10 text-2xl lg:text-xl">Hi, my name is</p>
-      <p class="text-7xl lg:text-5xl text-nightOwl-text font-bold py-2">
-        Sushant Sharma
-      </p>
-      <p class="text-nightOwl-border text-5xl lg:text-4xl font-semibold">
-        I build things for the web.
-      </p>
-      <p
-        class="text-nightOwl-text text-3xl lg:text-2xl py-8 max-w-lg lg:max-w-fit"
-      >
-        I’m a software engineer based in Bengaluru, IN specializing in building
-        digital experiences.
-      </p>
-    </div>
-    <div class="hidden lg:block">
-      <Sphere client:load />
-    </div>
-  </main>
-</BaseLayout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
+  </head>
+  <body class="px-12 bg-[#0a0a0a] max-w-5xl mx-auto h-full">
+    <header>
+      <Navbar client:load />
+    </header>
+    <main class="flex items-center justify-center font-mono">
+      <div>
+        <p class="text-nightOwl-pink py-10 text-2xl lg:text-xl">
+          Hi, my name is
+        </p>
+        <p class="text-7xl lg:text-5xl text-nightOwl-text font-bold py-2">
+          Sushant Sharma
+        </p>
+        <p class="text-nightOwl-border text-5xl lg:text-4xl font-semibold">
+          I build things for the web.
+        </p>
+        <p
+          class="text-nightOwl-text text-3xl lg:text-2xl py-8 max-w-lg lg:max-w-fit"
+        >
+          I’m a software engineer based in Bengaluru, IN specializing in
+          building digital experiences.
+        </p>
+      </div>
+      <div class="hidden lg:block">
+        <Sphere client:load />
+      </div>
+      <main class="text-nightOwl-text py-8 text-4xl lg:text-xl h-full">
+        <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4 pt-8 lg:pt-0">
+          About Me
+        </h1>
+        <p class="text-nightOwl-text py-4">
+          Hello! I'm Sushant, a software Engineer based in Bengaluru, IN. I
+          enjoy creating beautiful and reliable things that live on the
+          internet.
+        </p>
+        <p class="py-2 text-3xl lg:text-xl">
+          Here are some technologies I'm fairly comfortable with:
+        </p>
+        <ul class="p-2 text-3xl lg:text-lg">
+          {
+            comfortable.map((c) => (
+              <li class="list-inside">
+                <span>&gt;</span>
+                {c}
+              </li>
+            ))
+          }
+        </ul>
+        <p class="pt-2 text-3xl lg:text-xl">
+          Here are some things I'm trying to get comfortable with:
+        </p>
+        <ul class="p-2 text-3xl lg:text-lg">
+          {
+            learn.map((c) => (
+              <li class="list-inside">
+                <span>&gt;</span>
+                {c}
+              </li>
+            ))
+          }
+        </ul>
+        <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mt-12">
+          Projects <span class="text-2xl lg:text-sm text-nightOwl-text"
+            >Check out my <a
+              href="https://github.com/sushij"
+              target="_blank"
+              class="text-nightOwl-pink underline">github</a
+            >
+            for more</span
+          >
+        </h1>
+        <section class="flex flex-wrap gap-3 py-6 justify-center">
+          {
+            projects.map((project) => (
+              <Card
+                title={project.title}
+                tech={project.tech}
+                desc={project.desc}
+                links={project.links}
+              />
+            ))
+          }
+        </section>
+      </main>
+      <Footer />
+    </main>
+  </body>
+</html>
