@@ -2,7 +2,8 @@ import { useState } from "react";
 import { CloseMenuIcon, Logo, MenuIcon } from "./Icons";
 const Links = [
   { href: "/", name: "Home" },
-  { href: "/about", name: "About" },
+  { href: "#about", name: "About" },
+  { href: "#projects", name: "Projects" },
   { href: "/resume.pdf", name: "Resume", target: "_blank" },
 ];
 function Navbar() {
