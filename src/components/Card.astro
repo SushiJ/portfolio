@@ -13,13 +13,11 @@ const { title, tech, desc, links } = Astro.props;
         { !!links.live && <a href=`${links.live ? links.live : ""}`><Link /></a>}
       </div>
     </div>
-    <div class="py-4 mt-2 flex flex-col text-2xl lg:text-xl">
-      <h1 class="font-semibold text-3xl">{title}</h1>
-      <p class="font-light lg:text-lg py-4">{desc}</p>
+    <div class="py-4 mt-2 flex flex-col">
+      <h1 class="font-semibold text-xl lg:text-3xl">{title}</h1>
+      <p class="font-light lg:text-lg py-2 lg:py-4">{desc}</p>
     </div>
-    <ul class="flex gap-2 font-thin absolute bottom-2 text-2xl lg:text-sm text-nightOwl-pink">
-      {tech.map(t =>
-        <li>{t}</li>
-      )}
+    <ul class="flex gap-2 font-mono absolute bottom-2 text-md lg:text-sm text-nightOwl-pink">
+      {tech.join(", ")} 
     </ul>
 </div>
