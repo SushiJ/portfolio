@@ -8,9 +8,9 @@ const Links = [
 function Navbar() {
   const [isSideBarOpen, setisSideBarOpen] = useState(false);
   return (
-    <nav className="flex justify-between items-center py-4 bg-nightOwl-transparent mt-8 text-nightOwl-text">
+    <nav className="flex justify-between items-center py-4 bg-nightOwl-transparent mt-2 lg:mt-8 text-nightOwl-text">
       <a href="/" className="text-nightOwl-pink">
-        <Logo className="w-20 h-20 lg:w-16 lg:h-16" />
+        <Logo className="w-12 h-12 lg:w-16 lg:h-16" />
       </a>
       <ul className="hidden lg:flex py-4 space-x-4">
         {Links.map((link) => (
@@ -36,8 +36,8 @@ function Navbar() {
       {isSideBarOpen && (
         <div
           tabIndex={isSideBarOpen ? 1 : -1}
-          className="text-4xl space-y-8 p-4 fixed right-0 top-0 bottom-0 z-10 w-72 h-60 rounded-sm 
-            mt-44 mr-4 text-left transition ease-in-out delay-100 text-nightOwl-text backdrop-blur"
+          className="text-xl space-y-2 p-4 absolute right-0 top-0 bottom-0 z-10 w-32 h-32 rounded-sm 
+            mt-20 mr-0 text-left text-nightOwl-pink backdrop-blur border-[1px] border-gray-800"
         >
           {Links.map((link) => (
             <p key={link.name}>
