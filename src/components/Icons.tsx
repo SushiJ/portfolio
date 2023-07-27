@@ -19,7 +19,7 @@ export function MenuIcon() {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
-      className="w-20 h-20"
+      className="w-10 h-10"
       viewBox="0 0 24 24"
     >
       <path
@@ -39,7 +39,7 @@ export function CloseMenuIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-20 h-20"
+      className="w-10 h-10"
     >
       <path
         strokeLinecap="round"
