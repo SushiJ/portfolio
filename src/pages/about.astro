@@ -4,7 +4,7 @@ import Card from "../components/Card.astro";
 const projects = [
   {
     title: "Windows98 Paint",
-    tech: ["React", "Redux", "RTK"],
+    tech: ["React", "Redux", "RTK", "Context"],
     desc: "UI inspired by windows 98, lets you draw and export drawings to share with others.",
     links: {
       github: "https://github.com/sushij",
@@ -18,56 +18,53 @@ const projects = [
     links: { github: "https://github.com/sushij" },
   },
 ];
-const comfortable = ["Javascript", "Typescript", "React", "Node"];
-const learn = ["Go", "Nextjs", "Vue"];
+const comfortable = ["Javascript", "Typescript", "React", "Node", "Tailwind"];
+const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
 ---
 
 <BaseLayout title="Sushant Sharma | About">
-  <main class="text-nightOwl-text py-8 text-4xl lg:text-xl h-full">
-    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mb-4 pt-8 lg:pt-0">
-      About Me
-    </h1>
-    <p class="text-nightOwl-text py-4">
+  <main class="text-nightOwl-text lg:py-8 pt-4">
+    <h1 class="text-2xl lg:text-4xl text-nightOwl-pink lg:mb-4">About Me</h1>
+    <p class="py-2 text-xl">
       Hello! I'm Sushant, a software Engineer based in Bengaluru, IN. I enjoy
-      creating beautiful and reliable things that live on the internet.
+      creating beautiful things that live on the internet.
     </p>
-    <p class="py-2 text-3xl lg:text-xl">
+    <p class="py-2 text-xl">
       Here are some technologies I'm fairly comfortable with:
     </p>
-    <ul class="p-2 text-3xl lg:text-lg">
+    <ul class="p-2 text-lg">
       {
         comfortable.map((c) => (
           <li class="list-inside">
-            <span>&gt;</span>
+            <span class="text-nightOwl-pink">&gt;</span>
             {c}
           </li>
         ))
       }
     </ul>
-    <p class="pt-2 text-3xl lg:text-xl">
-      Here are some things I'm trying to get comfortable with:
-    </p>
-    <ul class="p-2 text-3xl lg:text-lg">
+    <p class="pt-2 text-xl">Here are some things I'm familiar with:</p>
+    <ul class="p-2 text-lg">
       {
         learn.map((c) => (
           <li class="list-inside">
-            <span>&gt;</span>
+            <span class="text-nightOwl-pink">&gt;</span>
             {c}
           </li>
         ))
       }
     </ul>
-    <h1 class="text-6xl lg:text-4xl text-nightOwl-pink mt-12">
-      Projects <span class="text-2xl lg:text-sm text-nightOwl-text"
-        >Check out my <a
+    <h1 class="text-2xl lg:text-4xl text-nightOwl-pink mt-4 lg:mt-12">
+      Projects
+      <span class="hidden lg:inline text-sm text-nightOwl-text pb-4">
+        Check out my <a
           href="https://github.com/sushij"
           target="_blank"
           class="text-nightOwl-pink underline">github</a
         >
-        for more</span
-      >
+        for more
+      </span>
     </h1>
-    <section class="flex flex-wrap gap-3 py-6 justify-center">
+    <section class="flex flex-wrap gap-3 py-6 justify-around">
       {
         projects.map((project) => (
           <Card
@@ -79,5 +76,13 @@ const learn = ["Go", "Nextjs", "Vue"];
         ))
       }
     </section>
+    <p class="inline lg:hidden text-sm text-nightOwl-text pb-4">
+      Check out my <a
+        href="https://github.com/sushij"
+        target="_blank"
+        class="text-nightOwl-pink underline">github</a
+      >
+      for more
+    </p>
   </main>
 </BaseLayout>
