@@ -1,9 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+import { zinc } from "tailwindcss/colors";
+import defaultTheme from "tailwindcss/defaultTheme";
+
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       colors: {
+        gray: zinc,
         nightOwl: {
           primary: "#c792ea",
           muted: "#03243e",
@@ -20,7 +24,10 @@ module.exports = {
           pink: "#FF9CBE",
         },
       },
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
     },
-    plugins: [],
   },
-};
+  plugins: [],
+} satisfies Config;
