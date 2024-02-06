@@ -10,9 +10,17 @@ type Props = {
   width?: string;
   height?: string;
   viewBox?: string;
-}
+};
 
-const { color = "currentcolor", gradient, icon, size, width = "32", height = "32", viewBox = "0 0 232 232" } = Astro.props;
+const {
+  color = "currentcolor",
+  gradient,
+  icon,
+  size,
+  width = "32",
+  height = "32",
+  viewBox = "0 0 232 232",
+} = Astro.props;
 const iconPath = iconPaths[icon];
 
 const attrs: HTMLAttributes<"svg"> = {};
