@@ -1,23 +1,16 @@
 ---
-import File from "./icons/file.astro";
-import Github from "./icons/github.astro";
-import Link from "./icons/link.astro";
-const { title, tech, desc, links } = Astro.props;
+import Icon from "./Icon.astro";
+
+const { name, link, logo } = Astro.props;
 ---
 
-<div class="border-2 border-nightOwl-pink min-h-full w-96 p-6 rounded-md relative">
-    <div class="flex justify-between text-nightOwl-pink">
-      <File />
-      <div class="flex text-nightOwl-text gap-2">
-        <a href=`${links.github}`><Github /></a>
-        { !!links.live && <a href=`${links.live ? links.live : ""}`><Link /></a>}
-      </div>
-    </div>
-    <div class="py-4 mt-2 flex flex-col">
-      <h1 class="font-semibold text-xl lg:text-3xl">{title}</h1>
-      <p class="font-light lg:text-lg py-2 lg:py-4">{desc}</p>
-    </div>
-    <ul class="flex gap-2 font-mono absolute bottom-2 text-md lg:text-sm text-nightOwl-pink">
-      {tech.join(", ")} 
-    </ul>
-</div>
+<a href={link} class="">
+  <div
+    class="flex flex-col items-center rounded-sm border-2 border-pink-500/40 p-6"
+  >
+    <Icon icon={logo} color="#ec4899" height="40" width="40" />
+    <span class="text-lg text-gray-300/75">
+      {name}
+    </span>
+  </div>
+</a>

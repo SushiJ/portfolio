@@ -23,8 +23,8 @@ const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
 ---
 
 <BaseLayout title="Sushant Sharma | About">
-  <main class="text-nightOwl-text lg:py-8 pt-4">
-    <h1 class="text-2xl lg:text-4xl text-nightOwl-pink lg:mb-4">About Me</h1>
+  <main class="text-nightOwl-text flex-grow pt-4 lg:py-8">
+    <h1 class="text-nightOwl-pink text-2xl lg:mb-4 lg:text-4xl">About Me</h1>
     <p class="py-2 text-xl">
       Hello! I'm Sushant, a software Engineer based in Bengaluru, IN. I enjoy
       creating beautiful things that live on the internet.
@@ -53,9 +53,9 @@ const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
         ))
       }
     </ul>
-    <h1 class="text-2xl lg:text-4xl text-nightOwl-pink mt-4 lg:mt-12">
+    <h1 class="text-nightOwl-pink mt-4 text-2xl lg:mt-12 lg:text-4xl">
       Projects
-      <span class="hidden lg:inline text-sm text-nightOwl-text pb-4">
+      <span class="text-nightOwl-text hidden pb-4 text-sm lg:inline">
         Check out my <a
           href="https://github.com/sushij"
           target="_blank"
@@ -64,7 +64,7 @@ const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
         for more
       </span>
     </h1>
-    <section class="flex flex-wrap gap-3 py-6 justify-around">
+    <section class="flex flex-wrap justify-around gap-3 py-6">
       {
         projects.map((project) => (
           <Card
@@ -76,7 +76,7 @@ const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
         ))
       }
     </section>
-    <p class="inline lg:hidden text-sm text-nightOwl-text pb-4">
+    <p class="text-nightOwl-text inline pb-4 text-sm lg:hidden">
       Check out my <a
         href="https://github.com/sushij"
         target="_blank"
