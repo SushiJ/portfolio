@@ -1,19 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Link from "../components/LinkCard.astro";
+const Links = [
+  {
+    link: "https://github.com/sushij",
+    name: "Github",
+    logo: "github",
+  },
+  {
+    link: "https://github.com/sushij",
+    name: "Twitter",
+    logo: "twitter",
+  },
+  {
+    link: "mailto:sushant.wurk@gmail.com",
+    name: "Email",
+    logo: "paper-plane-tilt",
+  },
+  {
+    link: "https://www.linkedin.com/in/sushantsharma23",
+    name: "Linkedin",
+    logo: "linkedin",
+  },
+];
 ---
 
 <BaseLayout title="Sushant Sharma | Home">
   <main class="flex-grow">
-    <div class="mt-8">
-      <h5 class="mb-2 text-sm font-bold italic text-pink-500/90">hey there!</h5>
-      <h1 class="mt-12 text-5xl font-semibold text-gray-300">I'm Sushant,</h1>
+    <div class="mt-12">
+      <h5 class="text-sm font-bold italic text-pink-500/90">hey there!</h5>
+      <h1 class="mt-8 text-5xl font-semibold text-gray-300">I'm Sushant,</h1>
       <h3 class="mt-1 text-4xl font-semibold leading-tight text-gray-500">
         a software engineer based in Bengaluru, IN.
       </h3>
       <h3 class="mt-8 text-lg text-gray-500">
         I enjoy building beautiful things that live on the internet.
       </h3>
-      <!-- TODO: More content here -->
     </div>
+    <ul class="mt-10 grid grid-cols-2 gap-4">
+      {Links.map(({ link, logo }) => <Link logo={logo} href={link} />)}
+    </ul>
+    <p class="mt-24 text-white/35">more coming soon...</p>
   </main>
 </BaseLayout>
