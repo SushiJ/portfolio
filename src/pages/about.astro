@@ -18,71 +18,46 @@ const projects = [
     links: { github: "https://github.com/sushij" },
   },
 ];
-const comfortable = ["Javascript", "Typescript", "React", "Node", "Tailwind"];
+const comfortable = ["Typescript", "Javascript", "React", "Node", "Tailwind"];
 const learn = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
 ---
 
 <BaseLayout title="Sushant Sharma | About">
-  <main class="text-nightOwl-text flex-grow pt-4 lg:py-8">
-    <h1 class="text-nightOwl-pink text-2xl lg:mb-4 lg:text-4xl">About Me</h1>
-    <p class="py-2 text-xl">
-      Hello! I'm Sushant, a software Engineer based in Bengaluru, IN. I enjoy
-      creating beautiful things that live on the internet.
-    </p>
-    <p class="py-2 text-xl">
-      Here are some technologies I'm fairly comfortable with:
-    </p>
-    <ul class="p-2 text-lg">
-      {
-        comfortable.map((c) => (
-          <li class="list-inside">
-            <span class="text-nightOwl-pink">&gt;</span>
-            {c}
-          </li>
-        ))
-      }
-    </ul>
-    <p class="pt-2 text-xl">Here are some things I'm familiar with:</p>
-    <ul class="p-2 text-lg">
-      {
-        learn.map((c) => (
-          <li class="list-inside">
-            <span class="text-nightOwl-pink">&gt;</span>
-            {c}
-          </li>
-        ))
-      }
-    </ul>
-    <h1 class="text-nightOwl-pink mt-4 text-2xl lg:mt-12 lg:text-4xl">
-      Projects
-      <span class="text-nightOwl-text hidden pb-4 text-sm lg:inline">
-        Check out my <a
-          href="https://github.com/sushij"
-          target="_blank"
-          class="text-nightOwl-pink underline">github</a
-        >
-        for more
-      </span>
-    </h1>
-    <section class="flex flex-wrap justify-around gap-3 py-6">
-      {
-        projects.map((project) => (
-          <Card
-            title={project.title}
-            tech={project.tech}
-            desc={project.desc}
-            links={project.links}
-          />
-        ))
-      }
-    </section>
-    <p class="text-nightOwl-text inline pb-4 text-sm lg:hidden">
-      Check out my <a
-        href="https://github.com/sushij"
-        target="_blank"
-        class="text-nightOwl-pink underline">github</a
-      >
-      for more
-    </p>
+  <h5 class="mb-14 mt-10 text-sm font-bold italic text-pink-500/90">About</h5>
+  <main class="flex flex-grow justify-center text-gray-200/90">
+    <div>
+      <p class="pb-6 text-sm">
+        A <span class="italic">full-stack developer</span>
+        driven by curiosity for learning and a deep love for building innovative
+        solutions. I like to constantly seek out new challenges and opportunities
+        to expand my skill set. Whether it's mastering the intricacies of database
+        management systems or diving into the latest technologies, I thrive on the
+        thrill of discovery and the satisfaction of turning ideas into reality.
+      </p>
+      <p class="pt-6 text-sm">
+        Some technologies I'm fairly comfortable with &dash;
+      </p>
+      <ul class="p-2 text-sm">
+        {
+          comfortable.map((c) => (
+            <li class="text-gray-300/85">
+              <span class="text-xs text-pink-500/90">&not;</span>
+              {c}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="pt-2 text-sm">Some things I'm familiar with &dash;</p>
+      <ul class="p-2 text-sm">
+        {
+          learn.map((c) => (
+            <li class="text-gray-300/85">
+              <span class="text-xs text-pink-500/90">&not;</span>
+              {c}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </main>
 </BaseLayout>
