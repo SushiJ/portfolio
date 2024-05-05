@@ -1,4 +1,6 @@
 # build output
+colorScheme.css
+todo.md
 dist/
 # generated types
 .astro/
