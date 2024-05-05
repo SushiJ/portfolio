@@ -45,23 +45,19 @@ export const Links = [
     </header>
     <main class="flex-grow">
       <div class="mt-12">
-        <h5 class="text-xs font-bold italic text-pink-500/90 lg:text-sm">
-          hey there!
-        </h5>
-        <h1
-          class="mt-8 text-2xl font-semibold tracking-tight text-neutral-100 lg:text-5xl"
-        >
+        <h5 class="text-xs font-bold italic text-pink-500/90">hey there!</h5>
+        <h1 class="mt-8 text-2xl font-semibold tracking-tight text-neutral-100">
           I'm Sushant,
         </h1>
         <h3
-          class="text-md prose mt-2 font-medium leading-tight text-neutral-400 lg:text-4xl"
+          class="text-md prose mt-2 font-medium leading-tight text-neutral-400"
         >
           a <span class="italic"> software engineer</span> based in Bengaluru, IN.
           I enjoy building beautiful things that live on the internet. Also, currently
           looking for a new gig.
         </h3>
       </div>
-      <ul class="mt-14 grid grid-cols-2 gap-2 lg:mt-10 lg:gap-4">
+      <ul class="mt-14 grid grid-cols-2 gap-2">
         {Links.map(({ link, logo }) => <LinkCard logo={logo} href={link} />)}
       </ul>
       <About />
