@@ -1,31 +1,44 @@
 ---
 import Icon from "../components/Icon.astro";
-const { href, logo } = Astro.props;
+const { href, logo, id } = Astro.props;
 ---
 
-<li class="col-span-1 text-gray-500 transition-all hover:text-white/90">
+<li
+  class="col-span-1 text-gray-500 transition-all hover:cursor-copy hover:text-white/90"
+>
   <a
     class="inline-grid w-full rounded-lg border-2 border-white/40 p-4 no-underline hover:border-white/90"
-    href={href}
+    href={href ? href : null}
   >
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3" data-name={id}>
       <span class="text-xl">
         <Icon icon={logo} height="24" width="24" />
       </span>
-      <svg
-        stroke="currentColor"
-        fill="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        class="ml-auto h-5 w-5"
-        height="1em"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M18.25 15.5a.75.75 0 0 1-.75-.75V7.56L7.28 17.78a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L16.44 6.5H9.25a.75.75 0 0 1 0-1.5h9a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75Z"
-        ></path>
-      </svg>
+      {
+        href ? (
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            class="ml-auto h-5 w-5"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M18.25 15.5a.75.75 0 0 1-.75-.75V7.56L7.28 17.78a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L16.44 6.5H9.25a.75.75 0 0 1 0-1.5h9a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75Z" />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            class="ml-auto h-5 w-5 "
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path d="M200,32H163.74a47.92,47.92,0,0,0-71.48,0H56A16,16,0,0,0,40,48V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm-72,0a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32Zm72,184H56V48H82.75A47.93,47.93,0,0,0,80,64v8a8,8,0,0,0,8,8h80a8,8,0,0,0,8-8V64a47.93,47.93,0,0,0-2.75-16H200Z" />
+          </svg>
+        )
+      }
     </div>
   </a>
 </li>

@@ -1,15 +1,18 @@
 ---
 const Links = [
-  // { href: "/portfolio", name: "home" },
-  // { href: "/about", name: "about" },
   { href: "/portfolio/resume.pdf", name: "resume", target: "_blank" },
+  { href: "https://sushi-cv.vercel.app", name: "cv", target: "_blank" },
 ];
 ---
 
-<nav class="text-sm font-medium">
+<nav class="space-x-2 text-sm font-medium">
   {
     Links.map((link) => (
-      <a href={link.href} class="text-neutral-400 hover:text-neutral-50">
+      <a
+        href={link.href}
+        target={link.target}
+        class="rounded border border-pink-500/20 bg-pink-500/15 px-2 py-1 text-neutral-50 hover:text-neutral-50"
+      >
         {link.name}
       </a>
     ))

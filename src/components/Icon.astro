@@ -14,7 +14,6 @@ type Props = {
 
 const {
   color = "currentcolor",
-  gradient,
   icon,
   size,
   width = "32",
@@ -25,9 +24,6 @@ const iconPath = iconPaths[icon];
 
 const attrs: HTMLAttributes<"svg"> = {};
 if (size) attrs.style = { "--size": size };
-
-const gradientId =
-  "icon-gradient-" + Math.round(Math.random() * 10e12).toString(36);
 ---
 
 <svg
@@ -36,8 +32,8 @@ const gradientId =
   height={height}
   viewBox={viewBox}
   aria-hidden="true"
-  stroke={gradient ? `url(#${gradientId})` : color}
-  fill={gradient ? `url(#${gradientId})` : color}
+  stroke={color}
+  fill={color}
   {...attrs}
 >
   <g set:html={iconPath} />

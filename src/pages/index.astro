@@ -11,12 +11,12 @@ export const Links = [
     logo: "github",
   },
   {
-    link: "https://github.com/sushij",
+    link: "https://x.com/sushidotgg",
     name: "Twitter",
-    logo: "twitter",
+    logo: "twitter_new",
   },
   {
-    link: "mailto:sushant.wurk@gmail.com",
+    link: "",
     name: "Email",
     logo: "paper-plane-tilt",
   },
@@ -38,7 +38,7 @@ export const Links = [
     <link rel="stylesheet" href="fonts/inter/inter.css" />
   </head>
   <body
-    class="mx-auto flex h-screen max-w-xl flex-col bg-[#111010] px-4 antialiased selection:text-pink-500/90"
+    class="mx-auto flex h-screen max-w-xl flex-col bg-[#111010] px-4 antialiased selection:bg-pink-500/20 selection:text-white"
   >
     <header class="ml-auto mt-8">
       <Navbar />
@@ -58,10 +58,48 @@ export const Links = [
         </h3>
       </div>
       <ul class="mt-14 grid grid-cols-2 gap-2">
-        {Links.map(({ link, logo }) => <LinkCard logo={logo} href={link} />)}
+        {
+          Links.map(({ link, logo, name }) => (
+            <LinkCard logo={logo} href={link} id={name} />
+          ))
+        }
       </ul>
       <About />
     </main>
     <Footer />
   </body>
 </html>
+
+<script>
+  const mailto = document.querySelector("[data-name='Email']");
+  function displayToast() {
+    const toast = document.createElement("p");
+    toast.style.color = "black";
+    toast.style.position = "absolute";
+    toast.style.top = "0";
+    toast.innerText = "mail copied to clipboard";
+    toast.classList.add("text-xs");
+    mailto.appendChild(toast);
+    toast.popover = "";
+    toast.togglePopover();
+    toast.showPopover();
+
+    setTimeout(() => {
+      mailto.classList.remove("relative");
+      mailto.removeChild(toast);
+      toast.hidePopover();
+    }, 1500);
+  }
+  mailto.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (!navigator.clipboard) return;
+
+    try {
+      await navigator.clipboard.writeText("sushant.wurk@gmail.com");
+      displayToast();
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  });
+</script>
