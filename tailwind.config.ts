@@ -10,6 +10,20 @@ export default {
       colors: {
         gray: zinc,
         accent: "#FF9CBE",
+        vesper: {
+          bg: '#101010',
+          bg1: "#1c1c1c",
+          fg: "#fafafa",
+          fg1: '#505050',
+          grey: "#666666",
+
+          cyan: "#99FFE4",
+          red: '#FF8080',
+          yellow: '#FFC799',
+          orange: '#FF7300',
+
+          blue: '#38a89d'
+        }
       },
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
