@@ -1,31 +1,108 @@
 ---
-const comfortable = ["Typescript", "Javascript", "React", "Node", "Tailwind"];
-const familiar = ["Nextjs", "Vue", "Angular", "Go", "Elixir", "Java", "Docker"];
+const tech = [
+  "Typescript/Javascript",
+  "React/Nextjs/remix/vue",
+  "Redux/RTK",
+  "Go/Java",
+  "Elixir",
+  "Docker/AWS",
+  "Linux/Vim/Neovim",
+  "Python/Django/Flask",
+  "NoSql/Sql",
+];
+
+const projects = [
+  {
+    name: "Riot.ml",
+    tags: ["open-source"],
+    desc: "Re-designed and developed website for open-source Ocaml library, focusing on usability and responsiveness.",
+    link: "riot.ml",
+  },
+  {
+    name: "Identiek",
+    tags: ["side project", "elixir", "egd"],
+    desc: "Identicon generator written in Elixir, identicon is the display image that github defaults to, when you make a new account.",
+    link: "www.github.com/sushij/identiek",
+  },
+  {
+    name: "Win Paint",
+    tags: ["side project", "typescript", "react", "vite", "rtk"],
+    desc: "Paint application inspired by windows-98 paint, implements a subset of the features provided by the original.",
+    link: "win98-paint.vercel.app",
+  },
+  {
+    name: "Hop music",
+    tags: ["side project", "typescript", "react", "vanila extract"],
+    desc: "Lofi music player application.",
+    link: "https://hop-music.vercel.app/",
+  },
+  {
+    name: "Dashboard",
+    tags: [
+      "side project",
+      "typescript",
+      "react",
+      "express",
+      "rtk",
+      "mongodb",
+      "mui",
+    ],
+    desc: "Dashboard visualizer example for some e-com application.",
+    link: "https://github.com/SushiJ/react-dash",
+  },
+  {
+    name: "Shoppy",
+    tags: [
+      "side project",
+      "typescript",
+      "react",
+      "fastify",
+      "rtk",
+      "mongodb",
+      "paypal",
+    ],
+    desc: "An ecommerce store build with react, fastify and paypal for payment processing.",
+    link: "https://github.com/SushiJ/ecom",
+  },
+  {
+    name: "Hackervues",
+    tags: ["side project", "vue", "tailwind"],
+    desc: "Hackernews web client made with vue.",
+    link: "https://hackervues.netlify.app/",
+  },
+  {
+    name: "Vesper-nvim",
+    tags: ["side project", "lua", "neovim"],
+    desc: "colorscheme for neovim.",
+    link: "https://github.com/sushij/vesper-nvim",
+  },
+];
 
 import Badge from "../components/Badge.astro";
+import Card from "./Card.astro";
 ---
 
-<section>
+<section class="mt-24 mb-10">
   <div class="mt-24">
-    <h5 class="pb-6 text-xs font-bold italic text-pink-500/90">About</h5>
-    <p class="prose text-neutral-400">
-      A <span class="italic text-neutral-50">full-stack developer</span>
-      driven by curiosity for learning and a deep love for building innovative solutions.
-      I like to constantly seek out new challenges and opportunities to expand my
-      skill set. Whether it's mastering the intricacies of database management systems
-      or diving into the latest technologies, I thrive on the thrill of discovery
-      and the satisfaction of turning ideas into reality.
-    </p>
+    <h5 class="pb-6 text-xs font-bold italic text-pink-500/90">projects</h5>
+    <ul class="grid grid-cols-2 gap-2">
+      {
+        projects.map((p) => (
+          <Card name={p.name} link={p.link} tags={p.tags} desc={p.desc} />
+        ))
+      }
+    </ul>
   </div>
-  <div class="mt-12">
-    <h5 class="pb-6 text-xs font-bold italic text-pink-500/90">Tech-stack</h5>
-    <p class="prose text-sm text-neutral-400">things fairly comfortable with</p>
-    <section class="flex flex-wrap gap-1 py-2 text-xs">
-      {comfortable.map((c) => <Badge title={c} />)}
-    </section>
-    <p class="prose pt-4 text-sm text-neutral-400">things I'm familiar with</p>
-    <section class="flex flex-wrap gap-1 py-2 text-xs">
-      {familiar.map((f) => <Badge title={f} />)}
-    </section>
+  <div class="mt-24">
+    <h5 class="pb-6 text-xs font-bold italic text-pink-500/90">tech</h5>
+    <ul class="flex flex-wrap gap-1">
+      {
+        tech.map((t) => (
+          <li>
+            <Badge title={t} />
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
