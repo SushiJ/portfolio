@@ -50,7 +50,7 @@ export const Links = [
         <h1 class="mt-8 text-2xl font-semibold tracking-tight text-neutral-100">
           I'm Sushant
         </h1>
-        <p class="mb-4 italic text-neutral-300/90">a software engineer</p>
+        <p class="mb-4 italic text-neutral-300/90">software engineer | full-stack web developer</p>
         <div class="mt-1 flex items-center text-sm text-neutral-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -99,21 +99,23 @@ export const Links = [
 <script>
   const mailto = document.querySelector("[data-name='Email']");
   function displayToast() {
+    mailto.classList.add("relative")
     const toast = document.createElement("p");
-    toast.style.color = "black";
+    toast.style.color = "#a3a3a3";
+    toast.style.border = "1px solid #ec4899AA";
+    toast.style.borderRadius = "5px";
+    toast.style.backgroundColor = "#111010";
     toast.style.position = "absolute";
-    toast.style.top = "0";
+    toast.style.padding = "0.25rem 1rem"
+    toast.style.right = "40px";
+    toast.style.bottom = "-50px";
     toast.innerText = "mail copied to clipboard";
     toast.classList.add("text-xs");
     mailto.appendChild(toast);
-    toast.popover = "";
-    toast.togglePopover();
-    toast.showPopover();
 
     setTimeout(() => {
       mailto.classList.remove("relative");
       mailto.removeChild(toast);
-      toast.hidePopover();
     }, 1500);
   }
   mailto.addEventListener("click", async (e) => {
@@ -123,7 +125,7 @@ export const Links = [
 
     try {
       await navigator.clipboard.writeText("sushant.wurk@gmail.com");
-      // displayToast();
+      displayToast();
     } catch (err) {
       console.error("Failed to copy!", err);
     }
