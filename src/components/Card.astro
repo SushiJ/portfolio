@@ -6,18 +6,18 @@ const { name, link, desc, tags } = Astro.props;
 
 <a
   href={link}
-  class="relative h-40 rounded-sm border-2 border-pink-500/40 p-2"
+  class="relative h-40 rounded-sm border-2 border-white/40 p-2 text-white/50 transition-all hover:border-white/90 hover:text-white/80"
   target="blank"
 >
   <div class="">
-    <h1 class="mb-2 text-lg text-gray-100/75 underline">
+    <h1 class="mb-2 text-lg underline">
       {name}
     </h1>
-    <p class="text-xs text-gray-300/75">
+    <p class="text-xs">
       {desc}
     </p>
     <div class="absolute bottom-2 flex flex-wrap gap-1">
-      {tags.map((t) => <Badge title={t} />)}
+      {tags.map((t: string) => <Badge title={t} />)}
     </div>
   </div>
 </a>
