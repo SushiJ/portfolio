@@ -3,7 +3,6 @@ import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import LinkCard from "../components/LinkCard.astro";
 import Navbar from "../components/Navbar.astro";
-import Icon from "../components/Icon.astro";
 
 export const Links = [
   {
@@ -37,28 +36,38 @@ export const Links = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- MetaData -->
-    <meta name="description" content="Sushant sharma - Software Engineer | Full-stack web developer" />
-    <meta name="keywords" content="full-stack web developer, react, node.js, typescript, javascript, software engineer" />
+    <meta
+      name="description"
+      content="Sushant sharma - Software Engineer | Full-stack web developer"
+    />
+    <meta
+      name="keywords"
+      content="full-stack web developer, react, node.js, typescript, javascript, software engineer"
+    />
     <meta name="author" content="Sushant sharma" />
 
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Sushant sharma - Software Engineer | Full-stack web developer">
-    <meta property="og:description" content="A full-stack developer dedicated to crafting innovative web applications and solving complex challenges. Dive into my portfolio to see how I turn ideas into impactful digital solutions">
-    <meta property="og:url" content="https://sushij.github.io/portfolio">
-    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Sushant sharma - Software Engineer | Full-stack web developer"
+    />
+    <meta
+      property="og:description"
+      content="A full-stack developer dedicated to crafting innovative web applications and solving complex challenges. Dive into my portfolio to see how I turn ideas into impactful digital solutions"
+    />
+    <meta property="og:url" content="https://sushij.github.io/portfolio" />
+    <meta property="og:type" content="website" />
 
     <link rel="icon" type="image/svg" href="favicon.svg" />
     <link rel="stylesheet" href="fonts/inter/inter.css" />
 
     <!-- Canonical Tag -->
-    <link rel="canonical" href="https://sushij.github.io/portfolio">
+    <link rel="canonical" href="https://sushij.github.io/portfolio" />
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#111010">
-    <head>
-</head>
-
+    <meta name="theme-color" content="#111010" />
   </head>
+
   <body
     class="mx-auto flex h-screen max-w-xl flex-col bg-[#111010] px-4 antialiased selection:bg-pink-500/20 selection:text-white"
   >
@@ -71,7 +80,9 @@ export const Links = [
         <h1 class="mt-8 text-2xl font-semibold tracking-tight text-neutral-100">
           I'm Sushant
         </h1>
-        <p class="mb-4 italic text-neutral-300/90">software engineer | full-stack web developer</p>
+        <p class="mb-4 italic text-neutral-300/90">
+          software engineer | full-stack web developer
+        </p>
         <div class="mt-1 flex items-center text-sm text-neutral-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -120,14 +131,14 @@ export const Links = [
 <script>
   const mailto = document.querySelector("[data-name='Email']");
   function displayToast() {
-    mailto.classList.add("relative")
+    mailto.classList.add("relative");
     const toast = document.createElement("p");
     toast.style.color = "#a3a3a3";
     toast.style.border = "1px solid #ec4899AA";
     toast.style.borderRadius = "5px";
     toast.style.backgroundColor = "#111010";
     toast.style.position = "absolute";
-    toast.style.padding = "0.25rem 1rem"
+    toast.style.padding = "0.25rem 1rem";
     toast.style.right = "40px";
     toast.style.bottom = "-50px";
     toast.innerText = "mail copied to clipboard";

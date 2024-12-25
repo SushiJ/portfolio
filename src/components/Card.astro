@@ -4,7 +4,11 @@ import Badge from "./Badge.astro";
 const { name, link, desc, tags } = Astro.props;
 ---
 
-<a href={link} class="relative h-40 rounded-sm border-2 border-pink-500/40 p-2">
+<a
+  href={link}
+  class="relative h-40 rounded-sm border-2 border-pink-500/40 p-2"
+  target="blank"
+>
   <div class="">
     <h1 class="mb-2 text-lg text-gray-100/75 underline">
       {name}
