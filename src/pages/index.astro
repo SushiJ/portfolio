@@ -3,6 +3,7 @@ import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import LinkCard from "../components/LinkCard.astro";
 import Navbar from "../components/Navbar.astro";
+import Icon from "../components/Icon.astro";
 
 export const Links = [
   {
@@ -131,8 +132,10 @@ export const Links = [
 <script>
   const mailto = document.querySelector("[data-name='Email']");
   function displayToast() {
+
     mailto.classList.add("relative");
     const toast = document.createElement("p");
+    
     toast.style.color = "#a3a3a3";
     toast.style.border = "1px solid #ec4899AA";
     toast.style.borderRadius = "5px";
