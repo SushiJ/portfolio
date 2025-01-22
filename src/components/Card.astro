@@ -6,11 +6,11 @@ const { name, link, desc, tags } = Astro.props;
 
 <a
   href={link}
-  class="relative h-40 rounded-lg border-2 border-white/40 p-2 text-white/50 transition-all hover:border-white/90 hover:text-white/80"
+  class="group relative h-40 rounded-lg border-2 border-text/40 p-2 text-text/70 transition-all hover:border-text/90 hover:text-text/80"
   target="blank"
 >
-  <div class="">
-    <h1 class="mb-2 text-lg underline">
+  <div>
+    <h1 class="text-md mb-2 italic underline group-hover:text-accent">
       {name}
     </h1>
     <p class="text-xs">
