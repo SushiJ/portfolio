@@ -5,13 +5,13 @@ const Links = [
 ];
 ---
 
-<nav class="space-x-2 text-sm font-medium">
+<nav class="space-x-2 text-xs font-medium">
   {
     Links.map((link) => (
       <a
         href={link.href}
         target={link.target}
-        class="rounded border border-pink-500/20 bg-pink-500/15 px-2 py-1 text-neutral-50 hover:text-neutral-50"
+        class="rounded border border-accent/30 bg-accent/20 px-2 py-1 text-text hover:text-neutral-50"
       >
         {link.name}
       </a>
