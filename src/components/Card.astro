@@ -18,7 +18,7 @@ const { name, link, desc, tags } = Astro.props;
         {desc}
       </p>
     </div>
-    <div class="flex flex-wrap gap-1">
+    <div class="hidden md:flex flex-wrap gap-1">
       {tags.map((t: string) => <Badge title={t} />)}
     </div>
   </div>
