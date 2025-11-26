@@ -82,22 +82,22 @@ const projects = [
 ];
 
 import Badge from "../components/Badge.astro";
-import Card from "./Card.astro";
+import ProjectCard from "./ProjectCard.astro";
 ---
 
 <section class="mb-10 mt-24">
   <div class="mt-24">
-    <h5 class="pb-6 text-xs font-bold italic text-accent">projects</h5>
+    <h5 class="pb-6 text-xs font-bold italic text-amber-300">projects</h5>
     <ul class="grid grid-cols-2 gap-2">
       {
         projects.map((p) => (
-          <Card name={p.name} link={p.link} tags={p.tags} desc={p.desc} />
+          <ProjectCard name={p.name} link={p.link} tags={p.tags} desc={p.desc} />
         ))
       }
     </ul>
   </div>
   <div class="mt-24">
-    <h5 class="pb-6 text-xs font-bold italic text-accent">tech</h5>
+    <h5 class="pb-6 text-xs font-bold italic text-amber-300">tech</h5>
     <ul class="flex flex-wrap gap-1">
       {
         tech.map((t) => (
