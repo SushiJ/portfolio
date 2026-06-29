@@ -7,5 +7,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  // base: "/portfolio",
+  base: "/portfolio",
 });
