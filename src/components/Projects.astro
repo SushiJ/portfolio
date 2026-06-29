@@ -1,0 +1,108 @@
+---
+const tech = [
+  "Typescript / Javascript",
+  "React / Svelte / Nextjs / Remix / Vue",
+  "Redux / RTK",
+  "Go / Java",
+  "Python / FastApi / Django / Flask",
+  "Postgres / SQLite / Mongo",
+  "Docker / AWS",
+  "Github actions",
+  "Linux / Vim / Neovim",
+  "Elixir / Clojure / Lua",
+];
+
+const projects = [
+  {
+    name: "Riot.ml",
+    tags: ["open-source", "tailwind"],
+    desc: "Re-designed and developed website for open-source Ocaml library, focusing on usability and responsiveness.",
+    link: "https://riot.ml",
+  },
+  {
+    name: "Shoppy",
+    tags: [
+      "typescript",
+      "react",
+      "fastify",
+      "rtk",
+      "mongodb",
+      "paypal",
+      "jest",
+      "react testing library",
+      "cypress",
+    ],
+    desc: "An ecommerce store build with react, fastify and paypal for payment processing.",
+    link: "https://github.com/SushiJ/ecom",
+  },
+  {
+    name: "Win Paint",
+    tags: ["typescript", "react", "vite", "rtk"],
+    desc: "Paint application inspired by windows-98 paint, implements a subset of the features provided by the original.",
+    link: "https://win98-paint.vercel.app",
+  },
+  {
+    name: "Waves music app",
+    tags: ["typescript", "react", "vanila extract"],
+    desc: "Lofi music player application.",
+    link: "https://sushij.github.io/waves/",
+  },
+  {
+    name: "Dashboard",
+    tags: ["typescript", "react", "express", "rtk", "mongodb", "mui"],
+    desc: "Dashboard visualizer example for some e-com application.",
+    link: "https://github.com/SushiJ/react-dash",
+  },
+  {
+    name: "Identiek",
+    tags: ["elixir", "egd"],
+    desc: "Identicon generator written in Elixir, identicon is the display image that github defaults to, when you make a new account.",
+    link: "https://github.com/sushij/identiek",
+  },
+  {
+    name: "Hackervues",
+    tags: ["vue", "tailwind"],
+    desc: "Hackernews web client made with vue.",
+    link: "https://hackervues.netlify.app/",
+  },
+  {
+    name: "Vesper-nvim",
+    tags: ["lua", "neovim"],
+    desc: "colorscheme for neovim.",
+    link: "https://github.com/sushij/vesper-nvim",
+  },
+];
+
+import Badge from "../components/Badge.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="mt-24 mb-10">
+  <div class="mt-24">
+    <h5 class="text-accent pb-6 text-xs font-bold italic">Projects</h5>
+    <ul class="grid grid-cols-2 gap-2">
+      {
+        projects.map((p) => (
+          <ProjectCard
+            name={p.name}
+            link={p.link}
+            tags={p.tags}
+            desc={p.desc}
+          />
+        ))
+      }
+    </ul>
+  </div>
+  <div class="mt-24">
+    <h5 class="text-md pb-6 font-bold text-amber-300 italic">Tech</h5>
+    <ul class="flex flex-wrap gap-1">
+      {
+        tech.map((t) => (
+          <li>
+            <Badge title={t} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

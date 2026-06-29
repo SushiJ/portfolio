@@ -1,0 +1,171 @@
+---
+import "../styles/global.css";
+import Projects from "../components/Projects.astro";
+import Footer from "../components/Footer.astro";
+import LinkCard from "../components/LinkCard.astro";
+import Navbar from "../components/Navbar.astro";
+
+export const Links = [
+  {
+    link: "https://github.com/sushij",
+    name: "Github",
+    logo: "github",
+  },
+  {
+    link: "https://www.linkedin.com/in/sushantsharma23",
+    name: "Linkedin",
+    logo: "linkedin",
+  },
+  {
+    link: "https://x.com/sushidotgg",
+    name: "Twitter",
+    logo: "twitter_new",
+  },
+  {
+    link: "",
+    name: "Email",
+    logo: "paper-plane-tilt",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sushant Sharma</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- MetaData -->
+    <meta
+      name="description"
+      content="Sushant sharma - Software Engineer | Full-stack web developer"
+    />
+    <meta
+      name="keywords"
+      content="full-stack web developer, react, node.js, typescript, javascript, software engineer"
+    />
+    <meta name="author" content="Sushant sharma" />
+
+    <!-- Open Graph Metadata -->
+    <meta
+      property="og:title"
+      content="Sushant sharma - Software Engineer | Full-stack web developer"
+    />
+    <meta
+      property="og:description"
+      content="A full-stack developer dedicated to crafting innovative web applications and solving complex challenges. Dive into my portfolio to see how I turn ideas into impactful digital solutions"
+    />
+    <meta property="og:url" content="https://sushij.github.io/portfolio" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/svg" href="favicon.svg" />
+    <link rel="stylesheet" href="fonts/inter/inter.css" />
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://sushij.github.io/portfolio" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#111010" />
+  </head>
+
+  <body
+    class="bg-dark text-text selection:text-accent/70 mx-auto flex h-screen max-w-xl flex-col px-4 antialiased"
+  >
+    <header class="mt-8 ml-auto">
+      <Navbar />
+    </header>
+    <main class="grow">
+      <div class="mt-12">
+        <h5 class="text-accent text-xs font-bold italic">hey there!</h5>
+        <h1 class="text-light mt-8 text-3xl font-semibold tracking-tight">
+          I'm Sushant
+        </h1>
+        <p class="text-light-dark mb-3 italic">
+          Software Engineer | Full-stack Web Developer
+        </p>
+        <div class="text-light-dark mt-1 flex items-center text-xs">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="-ml-1.5"
+            ><path
+              fill="currentColor"
+              d="M12 20.556q-.235 0-.47-.077t-.432-.25q-1.067-.981-2.164-2.185q-1.096-1.203-1.99-2.493t-1.468-2.633t-.572-2.622q0-3.173 2.066-5.234Q9.037 3 12 3t5.03 2.062q2.066 2.061 2.066 5.234q0 1.279-.572 2.613q-.572 1.333-1.458 2.632q-.885 1.3-1.981 2.494T12.92 20.21q-.191.173-.434.26q-.244.086-.487.086m.004-8.825q.667 0 1.14-.476q.472-.475.472-1.143t-.476-1.14t-1.143-.472t-1.14.476t-.472 1.143t.475 1.14t1.144.472"
+            ></path></svg
+          >
+          <h1 class="mr-2">Bengaluru, IN</h1>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M17 9h2V7h-2zm0 4h2v-2h-2zm0 4h2v-2h-2zM1 21V11l7-5l7 5v10h-5v-6H6v6zm16 0V10l-7-5.05V3h13v18z"
+            ></path></svg
+          >
+          <h1 class="mx-2">(Looking for a full-time role)</h1>
+        </div>
+        <h3 class="prose text-light/70 mt-2 text-sm leading-tight font-medium">
+          I enjoy learning new technologies and building with them.
+        </h3>
+      </div>
+      <ul class="mt-14 grid grid-cols-2 gap-2">
+        {
+          Links.map(({ link, logo, name }) => (
+            <LinkCard logo={logo} href={link} id={name} />
+          ))
+        }
+      </ul>
+      <Projects />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  const mailto = document.querySelector("[data-name='Email']");
+
+  function displayToast() {
+    mailto.classList.add("relative");
+    const toast = document.createElement("p");
+
+    let classes = [
+      "border-[1px]",
+      "border-light-dark",
+      "text-text",
+      "rounded-sm",
+      "bg-brand-dark",
+      "absolute",
+      "px-3",
+      "py-1",
+      "right-10",
+      "-bottom-14",
+      "text-xs",
+    ];
+    toast.classList.add(...classes);
+    toast.innerText = "mail copied to clipboard";
+    mailto.appendChild(toast);
+
+    setTimeout(() => {
+      mailto.classList.remove("relative");
+      mailto.removeChild(toast);
+    }, 1500);
+  }
+  mailto.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (!navigator.clipboard) return;
+
+    try {
+      await navigator.clipboard.writeText("sushant.wurk@gmail.com");
+      displayToast();
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  });
+</script>

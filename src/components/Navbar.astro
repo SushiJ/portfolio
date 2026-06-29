@@ -1,0 +1,17 @@
+---
+import Badge from "./Badge.astro";
+const Links = [
+  // { href: "/portfolio/resume.pdf", name: "resume", target: "_blank" },
+  { href: "https://sushi-cv.vercel.app", name: "CV", target: "_blank" },
+];
+---
+
+<nav class="space-x-2 text-xs font-medium">
+  {
+    Links.map((link) => (
+      <a href={link.href} target={link.target}>
+        <Badge title={link.name} />
+      </a>
+    ))
+  }
+</nav>

@@ -1,0 +1,25 @@
+---
+import Badge from "./Badge.astro";
+
+const { name, link, desc, tags } = Astro.props;
+---
+
+<a
+  href={link}
+  class="group border-light-dark/40 text-light/55 hover:border-text/90 hover:text-light/80 rounded-lg border-2 p-2 transition-all"
+  target="blank"
+>
+  <div class="flex h-full flex-col">
+    <div class="flex-1 pt-1 pb-4">
+      <h1 class="text-md group-hover:text-accent mb-2 italic underline">
+        {name}
+      </h1>
+      <p class="text-xs">
+        {desc}
+      </p>
+    </div>
+    <div class="hidden flex-wrap gap-1 md:flex">
+      {tags.map((t: string) => <Badge title={t} />)}
+    </div>
+  </div>
+</a>
